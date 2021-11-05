@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-api-project-churn-deployement
+  labels:
+    app: my-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-api
+  template:
+    metadata:
+      labels:
+        app: my-api
+    spec:
+      containers:
+      - name: my-api
+        image: api_churn:latest
+        imagePullPolicy: Never
+        ports:
+        - name: port80
+          containerPort: 8000
+        envFrom:
+        - secretRef:
+            name: projectsecret
+
+
