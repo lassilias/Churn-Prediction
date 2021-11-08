@@ -1,0 +1,55 @@
+version: "3.9"
+services:
+  api_churn_service:
+    image: api_churn:1.0
+    container_name: api_churn
+    networks: 
+      - api_churn_network
+    ports:
+      - target: 8000
+        published: 8000
+        protocol: tcp
+        mode: host
+  authentification_tests:
+     image: authentification:1.1
+     depends_on:
+     - api_churn_service 
+     container_name: authentification_container
+     networks:
+      - api_churn_network
+     ports:
+     - "9000:8000"
+     volumes:
+       - type: volume
+         source: VOLUME_LOG
+         target: /LOG  
+  authorization_tests:
+     image: authorization:1.1
+     depends_on:
+     - api_churn_service
+     container_name: authorization_container
+     networks:
+      - api_churn_network
+     ports:
+     - "9001:8000"
+     volumes:
+       - type: volume
+         source: VOLUME_LOG
+         target: /LOG
+  content_tests:
+     image: content:1.1
+     depends_on:
+     - api_churn_service
+     container_name: content_container
+     networks:
+      - api_churn_network
+     ports:
+     - "9002:8000"
+     volumes:
+       - type: volume
+         source: VOLUME_LOG
+         target: /LOG 
+volumes:
+  VOLUME_LOG:
+networks:
+  api_churn_network:
