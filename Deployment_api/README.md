@@ -8,7 +8,7 @@
 3) X_test.csv and y_test.csv are the Test Data.
 
 
-4) joblib files are the trained models. 
+4) joblib files are the trained models:
 
 KNC: KNeighborsClassifier
 RFC: RandomForestClassifier
