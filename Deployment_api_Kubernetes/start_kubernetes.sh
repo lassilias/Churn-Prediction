@@ -12,3 +12,4 @@ kubectl create -f my-secret-project.yml
 kubectl create -f my-service-project.yml
 kubectl create -f my-ingress-project.yml
 minikube get pods
+minikube dashboard --url=True
