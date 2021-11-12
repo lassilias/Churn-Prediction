@@ -1,4 +1,5 @@
 #!/bin/bash
+# To point your shell to minikube’s docker-daemon, run:
 eval $(minikube -p minikube docker-env)
 cd docker_container_api
 docker image build . -t api_churn:latest
