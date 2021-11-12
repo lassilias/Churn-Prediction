@@ -1,4 +1,5 @@
 #!/bin/bash
+# https://medium.com/swlh/how-to-run-locally-built-docker-images-in-kubernetes-b28fbc32cc1d
 # To point your shell to minikube’s docker-daemon, run:
 eval $(minikube -p minikube docker-env)
 cd docker_container_api
