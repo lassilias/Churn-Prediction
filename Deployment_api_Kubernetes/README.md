@@ -5,4 +5,4 @@ start_kubernetes.sh is a script that:
 
 1) build the docker image containing api_churn
 2) made it available locally to kubernets
-3) create the deployment,service,ingress dnd secrets after starting minikube
+3) create the deployment,service,ingress and secrets after starting minikube
