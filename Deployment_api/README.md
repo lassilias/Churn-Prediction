@@ -16,4 +16,4 @@ GB: GradientBoostingClassifier
 
 credentials.csv contains credentials to authenticate in api.
 
-start.sh is a script that create an create and activate an environment, install requirements python packages and run api.
+start.sh is a script that create and activate an environment, install requirements python packages and run api.
